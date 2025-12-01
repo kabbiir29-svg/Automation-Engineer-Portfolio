@@ -1,58 +1,64 @@
-import {
-  FaSitemap,
-  FaBrain,
-  FaCogs,
-  FaCloud,
-  FaNetworkWired,
-  FaShieldAlt,
-  FaPlug,
-  FaDatabase,
-} from "react-icons/fa";
-
 export const skills = [
   {
-    title: "Rewst Automations",
-    icon: FaSitemap,
-    color: "text-cyan-300",
+    category: "RPA & Automation",
+    items: [
+      "Rewst Automation",
+      "n8n Workflows",
+      "Power Automate",
+      "Zapier / Make (concepts)",
+      "Jinja2 Logic Templates"
+    ]
   },
+
   {
-    title: "OpenAI / AI Workflows",
-    icon: FaBrain,
-    color: "text-purple-300",
+    category: "AI & Intelligence",
+    items: [
+      "OpenAI Assistants",
+      "AI Troubleshooting Engines",
+      "Ticket Categorization Models",
+      "AI First Response Systems"
+    ]
   },
+
   {
-    title: "PSA Tools",
-    icon: FaCogs,
-    color: "text-blue-300",
+    category: "PSA Tools",
+    items: ["Autotask", "HaloPSA", "ConnectWise Manage"]
   },
+
   {
-    title: "RMM Tools",
-    icon: FaNetworkWired,
-    color: "text-green-300",
+    category: "RMM Tools",
+    items: ["Datto RMM", "NinjaOne", "Atera", "N-central"]
   },
+
   {
-    title: "n8n",
-    icon: FaPlug,
-    color: "text-yellow-300",
+    category: "Office 365",
+    items: [
+      "Azure AD / Entra ID",
+      "Microsoft 365 Admin",
+      "Exchange Online",
+      "Office Licensing Automation",
+      "User Provisioning / Deprovisioning"
+    ]
   },
+
   {
-    title: "Azure / Entra ID",
-    icon: FaCloud,
-    color: "text-cyan-300",
+    category: "SOC & Security",
+    items: [
+      "Barracuda Security Automation",
+      "WatchGuard Integrations",
+      "SOC Alert Reduction",
+      "Security Remediation Workflows"
+    ]
   },
+
   {
-    title: "Google Workspace",
-    icon: FaDatabase,
-    color: "text-orange-300",
-  },
-  {
-    title: "API Integrations",
-    icon: FaPlug,
-    color: "text-pink-300",
-  },
-  {
-    title: "Security / SOC Automations",
-    icon: FaShieldAlt,
-    color: "text-red-300",
-  },
+    category: "Integrations",
+    items: [
+      "Postman",
+      "REST API Webhooks",
+      "Graph API",
+      "Google Admin SDK",
+      "PSA/RMM API Integrations"
+    ]
+  }
 ];
