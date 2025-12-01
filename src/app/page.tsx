@@ -1,28 +1,19 @@
+"use client";
+
 import Hero from "@/components/Hero";
 import About from "@/components/About";
-import CoreValues from "@/components/CoreValues";
 import Skills from "@/components/Skills";
 import ExperienceSection from "@/components/ExperienceSection";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import PageWrapper from "@/components/PageWrapper";
-import ToolStack from "@/components/TechStack";
-import StatsSection from "@/components/StatsSection";
 import Footer from "@/components/Footer";
 
-export default function Home() {
+export default function AboutPage() {
   return (
-    <PageWrapper>
+    <div className="pt-24">
       <Hero />
-      <StatsSection />
       <About />
-      <CoreValues />
       <Skills />
-      <ToolStack />
-      <Projects />
       <ExperienceSection />
-      <Contact />
       <Footer />
-    </PageWrapper>
+    </div>
   );
 }
