@@ -14,7 +14,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 relative">
+    <section id="contact" className="pt-20 pb-10 relative">
 
       {/* Background overlay */}
       <div className="absolute inset-0 opacity-[0.10] bg-[url('/grid.svg')] bg-cover pointer-events-none"></div>

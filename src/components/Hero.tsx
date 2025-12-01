@@ -1,119 +1,230 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Link from "next/link";
+import Image from "next/image";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+
+// Rotating keywords
+const rotatingWords = [
+  "Automation Specialist",
+  "Rewst Expert",
+  "AI Workflow Engineer",
+  "PSA / RMM Automator",
+  "MSP Systems Architect",
+];
 
 export default function Hero() {
+  const [index, setIndex] = useState(0);
+
+  // Rotate subtitle
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % rotatingWords.length);
+    }, 2200);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Parallax avatar
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotate = useTransform(x, [-50, 50], [-2, 2]);
+
+  const handleMouseMove = (e: any) => {
+    const { clientX, clientY, currentTarget } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const cx = left + width / 2;
+    const cy = top + height / 2;
+
+    x.set((clientX - cx) / 18);
+    y.set((clientY - cy) / 18);
+  };
+
   return (
-    <section className="relative min-h-[70vh] flex items-center pt-24 pb-16">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-[1.6fr,1fr] gap-10 items-center relative z-10">
-        {/* LEFT: Text */}
-        <div>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-xs tracking-[0.3em] uppercase text-cyan-300/80 mb-4"
-          >
-            Automation Engineer · MSP · AI & RPA
-          </motion.p>
+    <section
+      id="hero"
+      className="pt-32 pb-28 relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      {/* 🌈 Soft gradient background */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,255,255,0.12),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_40%,rgba(128,0,255,0.15),transparent_60%)]" />
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.05 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4"
-          >
-            I build{" "}
-            <span className="bg-gradient-to-r from-cyan-300 via-blue-300 to-purple-300 bg-clip-text text-transparent">
-              automation systems
-            </span>{" "}
-            that remove L1 noise for MSPs.
-          </motion.h1>
+      <div className="max-w-7xl mx-auto px-6">
 
-          <motion.p
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-gray-300 max-w-2xl text-sm md:text-base leading-relaxed mb-6"
-          >
-            I specialize in building AI-driven workflows using Rewst, OpenAI, PSA/RMM
-            integrations, and cloud identity platforms like Azure/Entra ID and
-            Google Workspace. My focus is simple: reduce repetitive work, protect
-            SLAs, and make MSP operations scalable.
-          </motion.p>
+        {/* ========================= */}
+        {/* 🔵 HERO TOP SECTION */}
+        {/* ========================= */}
+        <div className="grid md:grid-cols-2 gap-20 items-center relative z-10">
 
-          {/* CTA Buttons */}
+          {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex flex-wrap gap-4 mb-6"
+            transition={{ duration: 0.7 }}
+            className="space-y-8"
           >
-            <Link
-              href="#projects"
-              className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-blue-500 text-sm font-medium text-black shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40 transition"
+            {/* Availability Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex items-center gap-2"
             >
-              View Automation Projects
-            </Link>
+              <span className="w-3 h-3 rounded-full bg-green-400 shadow-green-500 shadow-md animate-pulse" />
+              <p className="text-green-300/90 text-sm tracking-wide">
+                Available for advanced MSP automation projects
+              </p>
+            </motion.div>
 
-            <Link
-              href="#contact"
-              className="px-5 py-2.5 rounded-xl border border-white/20 text-sm font-medium text-white/90 hover:border-cyan-300/60 hover:text-cyan-100 transition"
+            {/* Name Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.25 }}
+              className="text-5xl md:text-6xl font-black leading-tight"
             >
-              Let&apos;s talk about automation →
-            </Link>
+              Hi, I'm{" "}
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-[shimmer_3s_infinite]">
+                Kabir Sharma
+              </span>
+            </motion.h1>
+
+            {/* Rotating Subtitle */}
+            <motion.h2
+              key={index}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-2xl md:text-3xl font-bold text-white/90 h-10"
+            >
+              {rotatingWords[index]}
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="text-gray-300 max-w-lg leading-relaxed text-[20px]"
+            >
+            I’m an Automation Engineer focused on building AI-driven workflows,
+            PSA/RMM integrations, SOC alert reduction, and user lifecycle automation.
+            I work on technologies like Rewst, OpenAI, Entra ID, Google Workspace,
+            Graph API, Autotask, HaloPSA, and Datto RMM to help MSPs eliminate repetitive
+            tasks and improve SLA performance.
+            </motion.p>
+
+            <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-gray-300 text-sm md:text-[20px] leading-relaxed mb-8"
+          >
+            My goal is simple: create scalable automation frameworks that reduce manual
+            effort, improve operational consistency, and give engineers more time to
+            focus on high-impact work.
+          </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.45 }}
+              className="flex gap-5 pt-2"
+            >
+              <a
+                href="#projects"
+                className="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-semibold shadow-lg shadow-cyan-400/40 transition"
+              >
+                View My Projects
+              </a>
+
+              <a
+                href="#contact"
+                className="px-6 py-3 rounded-xl border border-cyan-300 text-cyan-300 hover:bg-cyan-300 hover:text-black font-semibold transition"
+              >
+                Get In Touch
+              </a>
+            </motion.div>
           </motion.div>
 
-          {/* Quick highlights */}
+          {/* RIGHT – Avatar */}
           <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs text-gray-300"
+            style={{ x, y, rotate }}
+            transition={{ type: "spring", stiffness: 50, damping: 20 }}
+            className="relative flex justify-center"
           >
-            <div className="bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-              <p className="text-cyan-300 font-semibold text-sm mb-1">60–75%</p>
-              <p className="text-[11px] leading-snug">
-                L1 workload reduction across AI + automation workflows.
-              </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-              <p className="text-cyan-300 font-semibold text-sm mb-1">Sub-30s</p>
-              <p className="text-[11px] leading-snug">
-                AI-first-response engines protecting MSP SLAs.
-              </p>
-            </div>
-            <div className="bg-white/5 border border-white/10 rounded-xl px-4 py-3">
-              <p className="text-cyan-300 font-semibold text-sm mb-1">Build IT 2025</p>
-              <p className="text-[11px] leading-snug">
-                Travel SOC alerts automation showcased to MSP partners.
-              </p>
-            </div>
+            <motion.div
+              animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.08, 1] }}
+              transition={{ duration: 6, repeat: Infinity }}
+              className="absolute inset-0 w-80 h-80 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 blur-[120px]"
+            />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative w-64 h-64 rounded-full overflow-hidden bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_0_45px_rgba(0,255,255,0.25)]"
+            >
+              <Image
+                src="/avatar.jpg"
+                alt="Kabir Sharma"
+                fill
+                className="object-cover rounded-full"
+              />
+            </motion.div>
           </motion.div>
         </div>
 
-        {/* RIGHT: Simple glass panel for now (you already have visuals in BG) */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:block"
-        >
-          <div className="relative rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl p-6 shadow-xl shadow-cyan-500/20">
-            <p className="text-xs uppercase tracking-[0.25em] text-white/60 mb-3">
-              Focus Areas
-            </p>
-            <ul className="space-y-2 text-sm text-gray-200">
-              <li>• AI-driven ticket categorization & first response</li>
-              <li>• Autonomous L1 workflows (Rewst + OpenAI)</li>
-              <li>• SOC alert reduction & smart whitelisting</li>
-              <li>• User onboarding & offboarding at scale</li>
-              <li>• PSA/RMM integration patterns for MSPs</li>
-            </ul>
-          </div>
-        </motion.div>
+        <div className="mt-20 max-w-4xl">
+          {/* Social Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center gap-4"
+          >
+            <a
+              href="https://github.com/kabbiir29-svg"
+              target="_blank"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10
+                         text-white text-sm font-medium backdrop-blur-xl hover:border-cyan-300/50 
+                         hover:text-cyan-300 transition"
+            >
+              <FaGithub className="text-lg" />
+              GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/kabir-sharma-automation"
+              target="_blank"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10
+                         text-white text-sm font-medium backdrop-blur-xl hover:border-blue-400/50 
+                         hover:text-blue-300 transition"
+            >
+              <FaLinkedin className="text-lg" />
+              LinkedIn
+            </a>
+          </motion.div>
+        </div>
+
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 1, duration: 1.2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+      >
+        <div className="text-gray-400 text-xs mb-1">Scroll</div>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6 }}
+          className="w-4 h-4 border-b-2 border-r-2 border-cyan-300 rotate-45"
+        />
+      </motion.div>
     </section>
   );
 }
