@@ -151,7 +151,19 @@ export default function About() {
               </motion.div>
             ))}
           </motion.div>
-
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.7 }}
+        transition={{ delay: 1, duration: 1.2 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center"
+      >
+        <div className="text-gray-400 text-xs mb-1">Scroll</div>
+        <motion.div
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 1.6 }}
+          className="w-4 h-4 border-b-2 border-r-2 border-cyan-300 rotate-45"
+        />
+      </motion.div>
         </div>
       </div>
     </section>
