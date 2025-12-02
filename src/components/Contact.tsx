@@ -64,13 +64,6 @@ export default function Contact() {
                   +91 97799-96595
                 </span>
               </div>
-
-              <div className="flex items-center gap-4">
-                <FaLocationArrow className="text-cyan-300 text-xl" />
-                <span className="hover:text-cyan-300 transition">
-                  Open for Remote Projects Worldwide
-                </span>
-              </div>
             </div>
           </motion.div>
 
