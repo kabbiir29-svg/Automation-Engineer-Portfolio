@@ -2,6 +2,7 @@
 
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import CoreValues from "@/components/CoreValues";
 import Skills from "@/components/Skills";
 import ExperienceSection from "@/components/ExperienceSection";
 import Projects from "@/components/Projects";
@@ -16,6 +17,7 @@ export default function AboutPage() {
     <div className="pt-24">
       <Hero />
       <About />
+      <CoreValues />
       <Skills />
       <ExperienceSection />
       <Projects />
