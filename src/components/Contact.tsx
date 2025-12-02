@@ -61,7 +61,7 @@ export default function Contact() {
               <div className="flex items-center gap-4">
                 <FaPhone className="text-cyan-300 text-xl" />
                 <span className="hover:text-cyan-300 transition">
-                  +91 97799-96595
+                  +91 82888-50856
                 </span>
               </div>
             </div>
