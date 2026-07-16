@@ -30,7 +30,7 @@ export default function Projects() {
           </p>
         </ScrollReveal>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 auto-rows-fr">
           {projects.map((project, index) => {
             const Icon = project.icon;
 
@@ -41,7 +41,7 @@ export default function Projects() {
                     y: -8,
                     scale: 1.01
                   }}
-                  className="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 shadow-xl hover:shadow-cyan-500/20 transition-all"
+                  className="h-full p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 shadow-xl hover:shadow-cyan-500/20 transition-all flex flex-col"
                 >
                   {/* Icon + title */}
                   <div className="flex items-start gap-4 mb-4">
@@ -106,7 +106,7 @@ export default function Projects() {
                   )}
 
                   {/* Problem / Solution / Impact */}
-                  <div className="space-y-2 text-xs text-gray-300">
+                  <div className="space-y-2 text-xs text-gray-300 flex-grow">
                     <p>
                       <span className="text-cyan-300 font-semibold">Problem: </span>
                       {project.problem}
