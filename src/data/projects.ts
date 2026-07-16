@@ -1,6 +1,33 @@
-import { FaRobot, FaBolt, FaTools, FaUserShield, FaNetworkWired } from "react-icons/fa";
+import { FaRobot, FaBolt, FaTools, FaUserShield, FaNetworkWired, FaFileInvoiceDollar } from "react-icons/fa";
 
 export const projects = [
+  {
+    title: "Billing Reconciliation Automation",
+    role: "Full Stack Automation Engineer",
+    icon: FaFileInvoiceDollar,
+    tags: ["n8n", "QuickBooks", "MS Easy Auth", "Finance Automation"],
+    tech: ["n8n", "QuickBooks API", "Ingram Micro API", "Microsoft Easy Auth", "React"],
+    short: "Automated invoice ingestion from Ingram to QuickBooks with human-in-loop approval.",
+    bullets: [
+      "n8n workflows extract invoices from Ingram Micro.",
+      "Frontend dashboard shows invoices pending review with date filtering.",
+      "MS Easy Auth secures the approval interface.",
+      "Human review gates bill creation in QuickBooks."
+    ],
+    achievements: [
+      "Reduced manual invoice entry time by 90%.",
+      "Eliminated duplicate billing entries through review process.",
+      "Achieved 100% QBO bill accuracy with human validation.",
+      "Streamlined month-end reconciliation process."
+    ],
+    problem:
+      "Manual invoice imports from Ingram to QuickBooks were error-prone, time-consuming, and lacked approval governance.",
+    solution:
+      "Built an n8n-powered automation with a React dashboard for human review. Frontend uses MS Easy Auth for secure access, displays filtered invoices, and triggers QBO bill creation after approval.",
+    impact:
+      "Cut bookkeeping workload by 80%, eliminated billing errors, and created an auditable approval trail for finance teams."
+  },
+
   {
     title: "Autonomous L1 Agent",
     role: "Lead Automation Engineer",
