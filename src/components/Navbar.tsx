@@ -28,8 +28,9 @@ export default function Navbar() {
           <Link href="#contact" className="hover:text-cyan-300 transition">Contact</Link>
 
           <a
-            href="/resume/Kabir- Automation Engineer - CV - ITBD.pdf"
+            href="/docs/Kabir Sharma Resume.docx"
             target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-1.5 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-black font-semibold"
           >
             Resume

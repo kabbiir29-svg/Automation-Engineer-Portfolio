@@ -9,7 +9,7 @@ export default function ResumeSection() {
       </p>
 
       <a
-        href="/resume/Kabir- Automation Engineer - CV - ITBD.pdf"
+        href="/docs/Kabir Sharma Resume.docx"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-cyan-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-cyan-400"
