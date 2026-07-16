@@ -188,9 +188,7 @@ export default function Hero() {
             <a
               href="https://github.com/kabbiir29-svg"
               target="_blank"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10
-                         text-white text-sm font-medium backdrop-blur-xl hover:border-cyan-300/50 
-                         hover:text-cyan-300 transition"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium backdrop-blur-xl hover:border-cyan-300/50 hover:text-cyan-300 transition"
             >
               <FaGithub className="text-lg" />
               GitHub
@@ -199,9 +197,7 @@ export default function Hero() {
             <a
               href="https://www.linkedin.com/in/kabir-sharma-automation"
               target="_blank"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10
-                         text-white text-sm font-medium backdrop-blur-xl hover:border-blue-400/50 
-                         hover:text-blue-300 transition"
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-medium backdrop-blur-xl hover:border-blue-400/50 hover:text-blue-300 transition"
             >
               <FaLinkedin className="text-lg" />
               LinkedIn

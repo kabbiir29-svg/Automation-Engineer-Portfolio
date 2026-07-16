@@ -24,13 +24,7 @@ export default function ExperienceSection() {
         <ScrollReveal delay={0.1}>
           <motion.div
             whileHover={{ y: -6 }}
-            className="
-              rounded-3xl 
-              bg-white/5 backdrop-blur-xl 
-              border border-white/10 
-              shadow-xl shadow-cyan-500/10 
-              p-8 transition-all
-            "
+            className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl shadow-cyan-500/10 p-8 transition-all"
           >
             {/* Title + Company + Dates */}
             <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-6">

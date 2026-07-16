@@ -140,8 +140,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 * i }}
-                className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 text-center 
-                           shadow-md hover:border-cyan-400/40 hover:-translate-y-1 transition"
+                className="rounded-2xl bg-white/5 border border-white/10 px-4 py-5 text-center shadow-md hover:border-cyan-400/40 hover:-translate-y-1 transition"
               >
                 <div className="text-2xl mb-1">{stat.icon}</div>
                 <div className="text-2xl font-bold text-white mb-1">

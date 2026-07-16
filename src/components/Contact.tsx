@@ -74,24 +74,13 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="
-              p-8 rounded-3xl 
-              bg-white/5 backdrop-blur-xl 
-              border border-white/10 
-              shadow-xl hover:shadow-cyan-500/20 
-              transition-all
-              space-y-6
-            "
+            className="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-xl hover:shadow-cyan-500/20 transition-all space-y-6"
           >
             <div>
               <label className="block text-sm text-gray-300 mb-1">Name</label>
               <input
                 required
-                className="
-                  w-full px-4 py-2.5 rounded-xl 
-                  bg-black/30 border border-white/10 text-white 
-                  focus:border-cyan-400 transition
-                "
+                className="w-full px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-white focus:border-cyan-400 transition"
                 placeholder="Your name"
               />
             </div>
@@ -101,11 +90,7 @@ export default function Contact() {
               <input
                 type="email"
                 required
-                className="
-                  w-full px-4 py-2.5 rounded-xl 
-                  bg-black/30 border border-white/10 text-white 
-                  focus:border-cyan-400 transition
-                "
+                className="w-full px-4 py-2.5 rounded-xl bg-black/30 border border-white/10 text-white focus:border-cyan-400 transition"
                 placeholder="Your email"
               />
             </div>
@@ -115,25 +100,14 @@ export default function Contact() {
               <textarea
                 required
                 rows={4}
-                className="
-                  w-full px-4 py-3 rounded-xl 
-                  bg-black/30 border border-white/10 text-white 
-                  focus:border-cyan-400 transition resize-none
-                "
+                className="w-full px-4 py-3 rounded-xl bg-black/30 border border-white/10 text-white focus:border-cyan-400 transition resize-none"
                 placeholder="Tell me about your project or idea..."
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="
-                px-6 py-3 w-full 
-                rounded-xl font-semibold text-black
-                bg-gradient-to-r from-cyan-400 to-purple-400 
-                hover:from-cyan-300 hover:to-purple-300 
-                shadow-lg shadow-cyan-500/30
-                transition-all flex items-center justify-center gap-3
-              "
+              className="px-6 py-3 w-full rounded-xl font-semibold text-black bg-gradient-to-r from-cyan-400 to-purple-400 hover:from-cyan-300 hover:to-purple-300 shadow-lg shadow-cyan-500/30 transition-all flex items-center justify-center gap-3"
             >
               {sent ? (
                 <span className="text-black font-bold">Message Sent ✓</span>

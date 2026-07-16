@@ -41,14 +41,7 @@ export default function Projects() {
                     y: -8,
                     scale: 1.01
                   }}
-                  className="
-                    p-8 rounded-3xl 
-                    bg-white/5 backdrop-blur-xl 
-                    border border-white/10 
-                    hover:border-cyan-400/40 
-                    shadow-xl hover:shadow-cyan-500/20 
-                    transition-all
-                  "
+                  className="p-8 rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 hover:border-cyan-400/40 shadow-xl hover:shadow-cyan-500/20 transition-all"
                 >
                   {/* Icon + title */}
                   <div className="flex items-start gap-4 mb-4">

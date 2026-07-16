@@ -58,17 +58,7 @@ export default function CoreValues() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="
-                p-8 rounded-3xl 
-                bg-white/5 
-                border border-white/10 
-                backdrop-blur-xl 
-                shadow-xl 
-                hover:shadow-cyan-400/20 
-                hover:-translate-y-2 
-                transition-all 
-                cursor-default
-              "
+              className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-xl hover:shadow-cyan-400/20 hover:-translate-y-2 transition-all cursor-default"
             >
               {/* Icon */}
               <div
